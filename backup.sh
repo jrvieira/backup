@@ -17,7 +17,7 @@ echo -e "\n* $(date)" >> $log
 
 # sync and log
 for origin in $@; do
-	echo -e "\n${origin}" >> $log && rsync -azpvh6b --backup-dir=.old $origin $backup --delete-after >> $log
+	echo -e "\n${origin}" >> $log && rsync -azpvhb --backup-dir=.old $origin $backup --delete-after >> $log
 done
 
 #backup cron
